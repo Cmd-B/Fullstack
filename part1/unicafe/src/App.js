@@ -4,8 +4,8 @@ const Header = props => (
   <h1>{props.text}</h1>
 )
 
-const Display = props => (
-  <div>{props.name} {props.value}</div>
+const Statistic = props => (
+  <div>{props.text} {props.value}</div>
 )
 
 const Button = (props) => (
@@ -18,12 +18,12 @@ const Statistics = (props) => {
   if (props.good || props.neutral || props.bad >= 1) {
     return (
       <>
-        <Display name="good" value={props.good} />
-        <Display name="neutral" value={props.neutral} />
-        <Display name="bad" value={props.bad} />
-        <Display name="all" value={props.good+props.neutral+props.bad} />
-        <Display name="average" value={(props.good-props.bad)/(props.good+props.neutral+props.bad)} />
-        <Display name="positive" value={((props.good/(props.bad+props.good+props.neutral)) * 100) +'%'} />
+        <Statistic text="good" value={props.good} />
+        <Statistic text="neutral" value={props.neutral} />
+        <Statistic text="bad" value={props.bad} />
+        <Statistic text="all" value={props.good+props.neutral+props.bad} />
+        <Statistic text="average" value={(props.good-props.bad)/(props.good+props.neutral+props.bad)} />
+        <Statistic text="positive" value={((props.good/(props.bad+props.good+props.neutral)) * 100) +'%'} />
       </>
     )
   } else {
